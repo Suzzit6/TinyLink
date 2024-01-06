@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <%- include('./partials/head') %>
+</head>
+<body>
+  <style>
+    button {
+ padding: 15px 25px;
+ border: unset;
+ border-radius: 15px;
+ color: #212121;
+ z-index: 1;
+ background: #e8e8e8;
+ position: relative;
+ font-weight: 1000;
+ font-size: 17px;
+ -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ transition: all 250ms;
+ overflow: hidden;
+}
+
+button::before {
+ content: "";
+ position: absolute;
+ top: 0;
+ left: 0;
+ height: 100%;
+ width: 0;
+ border-radius: 15px;
+ background-color: #212121;
+ z-index: -1;
+ -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ transition: all 250ms
+}
+
+button:hover {
+ color: #e8e8e8;
+}
+
+button:hover::before {
+ width: 100%;
+}
+  </style>
+
+
+     <h1>URL shortener</h1><br><br>
+
+     <form class="row g-3" method="POST" action="/url">
+
+        <div class=" input-group mb-3">
+          <div class="form-floating">
+          <input type="text"  class=" form-control " name="url" id="floatingInputGroup1" placeholder="Link">
+          <label for="floatingInputGroup1">Paste Link Here</label>
+        </div>
+          <button type="submit">Generate</button><br>
+        </div>
+      </form>
+      <% if (locals.id) { %>
+        <p> Generated URL : http://localhost:5000/<%=id%></p>
+      <% } %><br><br><br><br>
+
+      <% if (locals.urls) { %>
+       
+        <ul class="list-group">
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Short IDs
+            <span>Redirect URL</span>
+            <span  >Clicks</span>
+          </li>
+          </ul> <br><br>
+      <% urls.forEach((url) => { %>
+        
+        <ul class="list-group">
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <%= url.shortId %>
+            <span><%= url.redirectURL %></span>
+            <span class="badge bg-primary rounded-pill"> <%= url.visitHistory.length %> </span>
+          </li>
+          </ul> 
+      <% }) %>
+
+      <% } %>
+      <%- include('./partials/script') %>
+
+</body>
+</html>

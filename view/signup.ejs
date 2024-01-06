@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('./partials/head') %>
+</head>
+<body>
+  <style>
+    html,body {
+      background-color: #212121;
+      background-position: center;
+    }
+   .card {
+ width: 370px;
+ height: 600px;
+ border-radius: 30px;
+ background: #212121;
+ box-shadow: 15px 15px 30px rgb(25, 25, 25),
+             -15px -15px 30px rgb(60, 60, 60);
+             position: absolute;
+ left: 550px;
+ top: 76px;
+
+          
+}
+.inner{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form-floating>.form-control{
+  height: (0.5rem + calc(var(--bs-border-width) * 2));
+  min-height: calc(1rem + calc(var(--bs-border-width) * 2));
+  
+}
+.signin{
+  color: #fff;
+  position: absolute;
+  top: 78px;
+  width: 220px;
+  height: 50px;
+  font-family: Verdana;
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.email-input, .password-input, .name-input{
+  height: 40px !important;
+  width: 238px;
+  font-size: 0.9rem;
+}
+.name-whole{
+  position: relative;
+  top: -15px;
+}
+label{
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+.email-text{
+  height: 27px !important;
+  padding-bottom: 5px;
+}
+
+button {
+  --primary-color: #645bff;
+  --secondary-color: #fff;
+  --hover-color: #111;
+  --arrow-width: 9px;
+  --arrow-stroke: 1.8px;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 12px;
+  color: var(--secondary-color);
+  padding: 1em 1.8em;
+  background: var(--primary-color);
+  display: flex;
+  transition: 0.2s background;
+  align-items: center;
+  gap: 0.5em;
+  font-weight: bold;
+  width: 111px;
+  height: 42px;
+  font-size: 0.83rem;
+}
+
+button .arrow-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button .arrow {
+  margin-top: 1px;
+  width: var(--arrow-width) ;
+  background: var(--primary-color);
+  height: var(--arrow-stroke);
+  position: relative;
+  transition: 0.2s;
+}
+
+button .arrow::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  border: solid var(--secondary-color);
+  border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+  display: inline-block;
+  top: -3px;
+  right: 3px;
+  transition: 0.2s;
+  padding: 3px;
+  transform: rotate(-45deg);
+}
+
+button:hover {
+  background-color: var(--hover-color);
+}
+
+button:hover .arrow {
+  background: var(--secondary-color);
+}
+
+button:hover .arrow:before {
+  right: 0;
+}
+.link {
+  text-decoration: none;
+}
+  </style>
+
+  <div class="card">
+    <div class="inner">
+      <span class="signin">SignUp</span>
+
+    <form method="POST" action="/user">
+     
+      <div class="form-floating name-whole">
+        <input type="text" class="form-control name-input" required name="name" id="floatingPassword" placeholder="Name">
+        <label for="floatingPassword">Name</label>
+      </div>
+     <div class="form-floating mb-3">
+      <input type="email" class="form-control email-input" required name="email" id="floatingInput" placeholder="name@example.com">
+      <label class="email-text" for="floatingInput">Email address</label>
+    </div>
+    <div class="form-floating">
+      <input type="password" class="form-control password-input" required name="password" id="floatingPassword" placeholder="Password">
+      <label for="floatingPassword">Password</label>
+    </div>
+    <button class="mt-3" type="submit">
+      Sign up
+      <div class="arrow-wrapper">
+          <div class="arrow"></div>
+      </div>
+    </button><br>
+    <a href="http://localhost:5000/login" class="link">Already Registered?</a>
+        </form>
+      </div>
+    </div>
+        <%- include('./partials/script') %>
+</body>
+</html>
+
+
+
+
+
