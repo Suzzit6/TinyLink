@@ -22,6 +22,7 @@ connectMongoDB('mongodb://localhost:27017/Short-url').then((value)=>{
 })
 app.use(express.urlencoded({extended:false}))
 const cookieParser = require('cookie-parser')
+app.use( express.static(path.resolve('./public')));
 
 app.use(cookieParser())
 app.use(Authorization)
@@ -32,6 +33,7 @@ app.set('views' ,path.resolve('./view'))
 app.use('/url', RestrictTo(["NORMAL",'ADMIN']) , urlroute )
 app.use('/', Staticroute)
 app.use('/user' , userroute)
+
 
 app.get('/', async(req,res)=>{
     return res.render('home')

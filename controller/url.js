@@ -1,13 +1,12 @@
 const URL = require('../model/url');
 const mongoose = require('mongoose');
-// const  shortid = require('shortid')
 const rg = require('rangen');
 
 
 async function handleGenerateShorturl (req, res){
     
    const body = req.body;
-//    const shortid = mongoose.plugin(require('mongoose-nanoid'), 7)
+
    const shortid =  rg.id();
    
    if(!body.url){

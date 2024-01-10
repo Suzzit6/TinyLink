@@ -15,7 +15,7 @@ async function Authorization(req,res,next){
 }
 function RestrictTo( roles = []){
    return function ( req, res , next){
-       if(!req.user) return res.redirect("/login")
+       if(!req.user) return res.redirect("/welcome")
        if(!roles.includes(req.user.role)) return res.end('Unauthorized')
        return next()
    }

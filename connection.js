@@ -5,5 +5,5 @@ async function connectMongoDB(url){
    mongoose.connect(url)
 }
 module.exports = {
-    connectMongoDB
+    connectMongoDB 
 }
