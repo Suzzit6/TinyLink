@@ -5,4 +5,4 @@ const{ handleGenerateShorturl } = require('../controller/url')
 
 router.post('/', handleGenerateShorturl)
 
-module.exports =  router;
+module.exports =  router; 
