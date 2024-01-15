@@ -5,7 +5,25 @@
 <p id="description">TinyLink - Node.js URL Shortener Effortlessly shorten URLs track clicks and manage links with TinyLink. Built on Node.js powered by MongoDB through Express.</p>
 
 <h2>Project Screenshots:</h2>
+<h3>Landing Page<h3> <br>
+<a href="https://ibb.co/7yBkVHg"><img src="https://i.ibb.co/6sGXb2v/Screenshot-2024-01-14-204845.png" alt="Screenshot-2024-01-14-204845" border="0"></a> <br><br>
 
-<img src="https://i.imgur.com/SwQ2aGM.png" alt="project-screenshot" width="400" height="400/">
+<h3>Home Page<h3><br>
 
-<img src="https://i.imgur.com/DvPkL8l.jpg" alt="project-screenshot" width="400" height="400/">
+<a href="https://ibb.co/0jJBfR1"><img src="https://i.ibb.co/DDKG7Hm/Screenshot-2024-01-14-204915.png" alt="Screenshot-2024-01-14-204915" border="0"></a>  <br><br>
+
+  
+  
+<h2>🧐 Features</h2>
+
+Here're some of the project's best features:
+
+*   this project allows users to generate and even track compact and easy-to- share links from longer URLs. Users can create accounts log in securely and manage their generated short links.
+
+  
+  
+<h2>💻 Built with</h2>
+
+Technologies used in the project:
+
+*   Designed a web interface using the EJS templating engine allowing users to easily generate and manage short links. Extended the functionality to Discord by implementing a Discord bot version of TinyLink.
