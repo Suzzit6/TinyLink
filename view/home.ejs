@@ -238,7 +238,7 @@
       <% if (locals.id) { %>
         <div class="cookieCard mt-5">
           <p class="cookieHeading">Short URL </p>
-          <p class="cookieDescription">http://localhost:5000/<%=id%> </a></p>
+          <p class="cookieDescription">https://tinylinkbysuzzit6.onrender.com/<%=id%> </a></p>
         </div>
       <% } %>
 
@@ -257,7 +257,7 @@
           <tbody>
             <% urls.forEach((url) => { %>
             <tr >
-              <td> <a class="text-decoration" href="http://localhost:5000/<%= url.shortId %>"> http://localhost:5000/<%= url.shortId %></a></th>
+              <td> <a class="text-decoration" href="https://tinylinkbysuzzit6.onrender.com/<%= url.shortId %>"> https://tinylinkbysuzzit6.onrender.com/<%= url.shortId %></a></th>
               <td> <a class="text-decoration" href="<%= url.redirectURL %>"> <%= url.redirectURL %></a></th>
               <td><%= url.visitHistory.length %></th>
             </tr>
