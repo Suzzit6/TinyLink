@@ -16,6 +16,7 @@ const Staticroute = require('./routes/StaticRoute')
 const userroute = require('./routes/user')
 app.use(express.json())
 
+console.log(process.env.MONGODB_CONNECT_URI)
 connectMongoDB(process.env.MONGODB_CONNECT_URI).then((value)=>{
   console.log("server connected")
 }).catch((err)=>{
