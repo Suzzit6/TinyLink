@@ -129,8 +129,14 @@ button:hover .arrow:before {
   text-decoration: none;
 }
   </style>
-   <%- include('./partials/nav') %>
+   <%- include('./partials/menu') %>
    <div class="card">
+    <% if (locals.error) { %>
+      <div class="alert alert-danger" role="alert">
+       <%= locals.error %> 
+      </div>
+    <% } %>
+    
     <div class="inner">
       <span class="signin">Login</span>
     <form method="POST" action="/user/login">

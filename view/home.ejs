@@ -5,45 +5,270 @@
 </head>
 <body>
   <style>
+   html {
+  height: 100%;
+  width: 100%;
+}
+
+   body{
+    background-color: #08061a;
+   }
+   .form-control {
+    border-radius: 44px !important; 
+   }
+   .url-input{
+    width: 40%;
+    margin-left: 470px;
+    
+   }
+   .site-slogan{
+    margin-top: 70px;
+   }
+   .slogan-text{
+    position:absolute;
+    left: 400px;
+    color: white;
+    font-family: 'Lato';
+    height: 65px;
+    display: flex;
+    align-items: center;
+    
+  }
+  .input-link{
+    margin-top: 55px;
+  }
+
+    /* .hero-img{
+    min-height: 56vh;
+    min-width: 100vw;
+    background-image: url(/images/hero-img5.jpg);
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    } */
+    .generate-btn{
+       margin-left: 45%;
+       width: 140px ;
+    }
+
+    .button {
+  position: relative;
+  padding: 10px 22px;
+  border-radius: 6px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  background-color: #7d2ae8;
+  transition: all 0.2s ease;
+}
+
+.button:active {
+  transform: scale(0.96);
+}
+
+.button:before,
+.button:after {
+  position: absolute;
+  content: "";
+  width: 150%;
+  left: 50%;
+  height: 100%;
+  transform: translateX(-50%);
+  z-index: -1000;
+  background-repeat: no-repeat;
+}
+
+.button:hover:before {
+  top: -70%;
+  background-image: radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, transparent 20%, #7d2ae8 20%, transparent 30%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, #7d2ae8 15%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%);
+  background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%,
+    10% 10%, 18% 18%;
+  background-position: 50% 120%;
+  animation: greentopBubbles 0.6s ease;
+}
+
+@keyframes greentopBubbles {
+  0% {
+    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%,
+      40% 90%, 55% 90%, 70% 90%;
+  }
+
+  50% {
+    background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%,
+      50% 50%, 65% 20%, 90% 30%;
+  }
+
+  100% {
+    background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%,
+      50% 40%, 65% 10%, 90% 20%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+
+.button:hover::after {
+  bottom: -70%;
+  background-image: radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, #7d2ae8 15%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%);
+  background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 20% 20%, 18% 18%;
+  background-position: 50% 0%;
+  animation: greenbottomBubbles 0.6s ease;
+}
+
+@keyframes greenbottomBubbles {
+  0% {
+    background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%,
+      70% -10%, 70% 0%;
+  }
+
+  50% {
+    background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%,
+      105% 0%;
+  }
+
+  100% {
+    background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%,
+      110% 10%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+
+.cookieCard {
+  width: 270px;
+  height: 160px;
+  background: linear-gradient(to right,rgb(137, 104, 255),rgb(175, 152, 255));
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+  padding: 50px;
+  position: absolute;
+  overflow: hidden;
+  left: 610px;
+  border-radius: 10%;
+  font-family: 'Trebuchet MS';
+  
+}
+
+.cookieCard::before {
+  width: 150px;
+  height: 150px;
+  content: "";
+  background: linear-gradient(to right,rgb(142, 110, 255),rgb(208, 195, 255));
+  position: absolute;
+  z-index: 1;
+  border-radius: 50%;
+  right: -25%;
+  top: -25%;
+}
+
+.cookieHeading {
+  font-size: 1.5em;
+  font-weight: 600;
+  color: rgb(241, 241, 241);
+  z-index: 2;
+}
+
+.cookieDescription {
+  font-size: 0.9em;
+  color: rgb(241, 241, 241);
+  z-index: 2;
+}
+
+.cookieDescription a {
+  color: rgb(241, 241, 241);
+}
+
+.acceptButton {
+  padding: 11px 20px;
+  background-color: #7b57ff;
+  transition-duration: .2s;
+  border: none;
+  color: rgb(241, 241, 241);
+  cursor: pointer;
+  font-weight: 600;
+  z-index: 2;
+}
+
+.acceptButton:hover {
+  background-color: #714aff;
+  transition-duration: .2s;
+}
+.text-decoration{
+  text-decoration: none;
+}
+
   </style>
      <%- include('./partials/nav') %>
-     <h1>URL shortener</h1><br><br>
+
+     <div class="hero-img">
+      
+     </div>
 
      <form class="row g-3" method="POST" action="/url">
-
-        <div class=" input-group mb-3">
-          <div class="form-floating">
-          <input type="text"  class=" form-control " name="url" id="floatingInputGroup1" placeholder="Link">
+        <div class="site-slogan">
+          <p class="fs-2 slogan-text">"Shrink,&#160; Share, &#160; Track:&#160; Your Links,&#160; Your Way!"</p>
+        </div>
+        <div class="url-input input-group  input-link" >
+          <div class="  form-floating mt-5">
+          <input type="text"  class=" form-control" name="url" id="floatingInputGroup1" placeholder="Link">
           <label for="floatingInputGroup1">Paste Link Here</label>
         </div>
-          <button type="submit">Generate</button><br>
         </div>
+        <div class="generate-btn">
+          <button type="submit" class="button" style = "border-radius: 20px; width: 130px;">
+            Generate
+          </button>
+        </div>
+        
       </form>
       <% if (locals.id) { %>
-        <p> Generated URL : http://localhost:5000/<%=id%></p>
-      <% } %><br><br><br><br>
+        <div class="cookieCard mt-5">
+          <p class="cookieHeading">Short URL </p>
+          <p class="cookieDescription">http://localhost:5000/<%=id%> </a></p>
+        </div>
+      <% } %>
+
 
       <% if (locals.urls) { %>
-       
-        <ul class="list-group">
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            Short IDs
-            <span>Redirect URL</span>
-            <span  >Clicks</span>
-          </li>
-          </ul> <br><br>
-      <% urls.forEach((url) => { %>
+        <div class="user-urls mt-5" data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
+        <h4 > Your URLs </h4>
+        <table id="scrollspyHeading2"  class="table table-dark table-striped">
+          <thead>
+            <tr>
+              <th scope="col"> ShortId</th>
+              <th scope="col">Redirect URL</th>
+              <th scope="col">Clicks</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% urls.forEach((url) => { %>
+            <tr >
+              <td> <a class="text-decoration" href="http://localhost:5000/<%= url.shortId %>"> http://localhost:5000/<%= url.shortId %></a></th>
+              <td> <a class="text-decoration" href="<%= url.redirectURL %>"> <%= url.redirectURL %></a></th>
+              <td><%= url.visitHistory.length %></th>
+            </tr>
+            <% }) %>
+          </tbody>
+          
+          <% } %>
+        </div>
+        </table>
         
-        <ul class="list-group">
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <%= url.shortId %>
-            <span><%= url.redirectURL %></span>
-            <span class="badge bg-primary rounded-pill"> <%= url.visitHistory.length %> </span>
-          </li>
-          </ul> 
-      <% }) %>
 
-      <% } %>
       <%- include('./partials/script') %>
 
 </body>

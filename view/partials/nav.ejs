@@ -1,67 +1,62 @@
 <style>
-  .navbar{
-    width: 4rem;
-    position: absolute;
-    left: 95%;
+  .main-text{
+    font-weight: 700 !important;
   }
-  .menu{
-    background-color: aliceblue;
+  .nav-texts{
+    color: white;
+    font-weight: 500;
   }
-  
-  .offcanvas{
-    background-color: rgb(9, 11, 11);
-    color: antiquewhite;
-    font-family: 'Montserrat', sans-serif;
-    font-weight:  200;
-    --bs-offcanvas-width: 280px;
-  }
-  .offcanvas-title{
-    color: rgb(19, 146, 19);
+    li{
+        margin-left: 60px;
+    }
 
-  }
-  .nav-link {
-     color: aliceblue !important;
-  }
 </style>
 
-<nav class="navbar fixed-top ">
-  
-      <button class="navbar-toggler menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+<nav id="navbar-example2" class="navbar navbar-expand-lg bg-body-tertiary px-3" data-bs-theme="dark">
+
+    <div class="container-fluid">
+      <a class="navbar-brand main-text nav-texts" href="http://localhost:5000/welcome">TinyLink.</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-
-      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <li>
-          <hr class="dropdown-divider">
-        </li>
-        <div class="offcanvas-body">
-          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+      
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active nav-texts" aria-current="page" href="http://localhost:5000/">Home</a>
+          </li>
+          <% if (locals.user) { %>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="http://localhost:5000/">Home</a>
-            </li>
+                <a class="nav-link nav-texts" href="#scrollspyHeading2">My Links</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle nav-texts" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <%= user.name %>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item nav-texts" href="http://localhost:5000/logout">Logout</a></li>
+                </ul>
+              </li>
+              <%  } else { %>
             <li class="nav-item">
-              <a class="nav-link" href="http://localhost:5000/signup">SignUp</a>
-            </li>
+                <a class="nav-link nav-texts" href="http://localhost:5000/signup"> SignUp </a>
+              </li>
             <li class="nav-item">
-              <a class="nav-link" href="http://localhost:5000/login">Login</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Socials
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="https://github.com/Suzzit6/TinyLink">Src Code</a></li>
-                <li><a class="dropdown-item" href="https://github.com/Suzzit6">GitHub</a></li>
-                
-                <li><a class="dropdown-item" href="https://www.linkedin.com/in/sujit-mishra-634971239/">Linkedin</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
+                <a class="nav-link nav-texts" href="http://localhost:5000/login"> Login </a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle nav-texts" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Socials
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://github.com/Suzzit6/TinyLink">Src Code</a></li>
+                    <li><a class="dropdown-item" href="https://github.com/Suzzit6">GitHub</a></li>
+                    <li><a class="dropdown-item" href="https://www.linkedin.com/in/sujit-mishra-634971239/">Linkedin</a></li>
+                </ul>
+              </li>
+            <% } %>
+        </ul>
       </div>
     </div>
   </nav>
+

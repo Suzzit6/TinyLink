@@ -13,9 +13,11 @@ async function UserSignup(req,res){
     
    })
    
-   return res.redirect('/')
+   return res.redirect('/login')
 } catch(error){
-    res.status(404).send('Email Already Registered')
+    return res.render('signup' ,{
+        error:"Email Already Registered"
+    })
  }
 }
 
@@ -23,7 +25,9 @@ async function UserLogin(req,res){
     const {email, password} = req.body
     const userfind = await User.findOne({ email , password })
     if(!userfind){
-        return res.redirect('/login',)
+        return res.render('signup' ,{
+            error:"Invalid Email or Password"
+        })
         
     }
     const token = SetUser(userfind)

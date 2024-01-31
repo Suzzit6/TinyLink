@@ -4,6 +4,8 @@ const fs = require('fs')
 const mongoose = require('mongoose')
 const URL = require('./model/url')
 const path = require('path')
+require('dotenv').config();
+
 const { Authorization , RestrictTo } = require('./Middlewares/auth')
 
 const port = 5000
@@ -14,12 +16,12 @@ const Staticroute = require('./routes/StaticRoute')
 const userroute = require('./routes/user')
 app.use(express.json())
 
-
-connectMongoDB('mongodb://localhost:27017/Short-url').then((value)=>{
+connectMongoDB(process.env.MONGODB_CONNECT_URI).then((value)=>{
   console.log("server connected")
 }).catch((err)=>{
     console.log(err)
 })
+ 
 app.use(express.urlencoded({extended:false}))
 const cookieParser = require('cookie-parser')
 app.use( express.static(path.resolve('./public')));
@@ -42,6 +44,7 @@ app.get('/', async(req,res)=>{
 app.get('/:shortId' , async (req,res)=>{
     try{
     const shortId = req.params.shortId;
+    console.log(req.user)
      
     const entry =  await URL.findOneAndUpdate(
         {
